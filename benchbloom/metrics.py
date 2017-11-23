@@ -6,3 +6,7 @@ gives an approximate (MinHash) answer at scale; these functions give the exact
 answer for small-to-medium corpora and for verifying the estimator.
 """
 
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Dict, List, Sequence, Set, Tuple
