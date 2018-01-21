@@ -10,3 +10,16 @@
 //   * A signature is K 64-bit min-hashes drawn from H universal hash seeds.
 //   * Estimated Jaccard = (matching min-positions) / K.
 //
+// Subcommands:
+//   sign   --input F --out F [--k 128] [--ngram 5] [--min-token 1]
+//   match  --ref F --subject F --out F [--threshold 0.5] [--top 0]
+//   self   --input F --out F [--threshold 0.8]   (near-duplicate detection)
+//
+// Signature file format (text, one record per line):
+//   <id>\t<token_count>\t<h0> <h1> ... <h_{k-1}>
+//
+// Exit codes: 0 ok, 2 usage error, 3 I/O error.
+
+#include <algorithm>
+#include <array>
+#include <cctype>
