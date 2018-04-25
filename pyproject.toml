@@ -1,1 +1,2 @@
 [build-system]
+requires = ["setuptools>=61.0"]
