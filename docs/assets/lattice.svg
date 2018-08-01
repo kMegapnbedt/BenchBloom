@@ -4,3 +4,5 @@
     <radialGradient id="ref" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0" stop-color="#8fd6a0" stop-opacity="0.85"/>
       <stop offset="1" stop-color="#2f6b3a" stop-opacity="0.15"/>
+    </radialGradient>
+    <radialGradient id="sub" cx="0.5" cy="0.5" r="0.5">
