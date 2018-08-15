@@ -36,3 +36,15 @@
 
 namespace bb {
 
+constexpr std::uint64_t kMersennePrime = (1ULL << 61) - 1; // 2^61 - 1
+
+// ---- hashing ---------------------------------------------------------------
+
+// FNV-1a 64-bit over raw bytes; used as the base hash for a shingle.
+static std::uint64_t fnv1a(const std::string& s) {
+    std::uint64_t h = 1469598103934665603ULL;
+    for (unsigned char c : s) {
+        h ^= static_cast<std::uint64_t>(c);
+        h *= 1099511628211ULL;
+    }
+    return h;
