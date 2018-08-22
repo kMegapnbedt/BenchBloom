@@ -10,3 +10,9 @@ report      Render a saved TSV match report into a human summary.
 
 from __future__ import annotations
 
+import argparse
+import json
+import sys
+import tempfile
+from pathlib import Path
+
