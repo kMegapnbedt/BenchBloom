@@ -16,3 +16,10 @@ import sys
 import tempfile
 from pathlib import Path
 
+from . import __version__, engine, ingest, metrics
+
+
+def _cmd_normalize(args: argparse.Namespace) -> int:
+    records = ingest.load(args.input, fields=args.field, id_field=args.id_field)
+    n = ingest.write_normalized(records, args.out, strip_punct=not args.keep_punct)
+    print(f"normalized {n} records -> {args.out}")
