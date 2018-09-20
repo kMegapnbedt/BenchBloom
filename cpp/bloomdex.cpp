@@ -48,3 +48,16 @@ static std::uint64_t fnv1a(const std::string& s) {
         h *= 1099511628211ULL;
     }
     return h;
+}
+
+// splitmix64 — generates well-distributed permutation seeds deterministically.
+static std::uint64_t splitmix64(std::uint64_t& x) {
+    std::uint64_t z = (x += 0x9E3779B97F4A7C15ULL);
+    z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9ULL;
+    z = (z ^ (z >> 27)) * 0x94D049BB133111EBULL;
+    return z ^ (z >> 31);
+}
+
+// One universal-hash coefficient pair (a*x + b) mod p.
+struct HashSeed {
+    std::uint64_t a;
