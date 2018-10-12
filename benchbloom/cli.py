@@ -23,3 +23,9 @@ def _cmd_normalize(args: argparse.Namespace) -> int:
     records = ingest.load(args.input, fields=args.field, id_field=args.id_field)
     n = ingest.write_normalized(records, args.out, strip_punct=not args.keep_punct)
     print(f"normalized {n} records -> {args.out}")
+    return 0
+
+
+def _cmd_scan(args: argparse.Namespace) -> int:
+    ref = ingest.load(args.ref, fields=args.field, id_field=args.id_field)
+    sub = ingest.load(args.subject, fields=args.field, id_field=args.id_field)
