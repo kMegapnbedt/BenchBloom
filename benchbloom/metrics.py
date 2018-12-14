@@ -10,3 +10,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Dict, List, Sequence, Set, Tuple
+
+
+def shingles(tokens: Sequence[str], n: int) -> Set[str]:
+    """Return the set of n-gram shingles (token n-grams joined by unit sep)."""
