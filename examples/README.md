@@ -6,3 +6,4 @@ Two tiny corpora ship here so you can watch benchbloom flag contamination:
 - `training.jsonl` — 6 training documents (the "subject"). Items `t1`, `t2`,
   and `t5` deliberately paraphrase or copy benchmark items `b2`, `b4`, and `b1`.
 
+## Exact Python scan (no compiler needed)
