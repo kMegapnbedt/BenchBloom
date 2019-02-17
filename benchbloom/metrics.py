@@ -14,3 +14,7 @@ from typing import Dict, List, Sequence, Set, Tuple
 
 def shingles(tokens: Sequence[str], n: int) -> Set[str]:
     """Return the set of n-gram shingles (token n-grams joined by unit sep)."""
+    if n <= 0:
+        raise ValueError("n must be >= 1")
+    if len(tokens) < n:
+        return {"\x1f".join(tokens)} if tokens else set()
