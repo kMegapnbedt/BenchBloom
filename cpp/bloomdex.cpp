@@ -61,3 +61,16 @@ static std::uint64_t splitmix64(std::uint64_t& x) {
 // One universal-hash coefficient pair (a*x + b) mod p.
 struct HashSeed {
     std::uint64_t a;
+    std::uint64_t b;
+};
+
+static std::vector<HashSeed> make_seeds(std::size_t k, std::uint64_t seed) {
+    std::vector<HashSeed> seeds(k);
+    std::uint64_t s = seed ? seed : 0xB100Du;
+    for (std::size_t i = 0; i < k; ++i) {
+        std::uint64_t a = splitmix64(s) % (kMersennePrime - 1) + 1; // non-zero
+        std::uint64_t b = splitmix64(s) % kMersennePrime;
+        seeds[i] = HashSeed{a, b};
+    }
+    return seeds;
+}
