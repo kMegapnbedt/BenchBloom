@@ -8,3 +8,4 @@ Two tiny corpora ship here so you can watch benchbloom flag contamination:
 
 ## Exact Python scan (no compiler needed)
 
+```bash
