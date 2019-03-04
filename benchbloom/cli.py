@@ -42,3 +42,9 @@ def _cmd_scan(args: argparse.Namespace) -> int:
         "summary": summary,
         "pairs": [vars(p) for p in pairs[: args.top]] if args.top else [vars(p) for p in pairs],
     }
+    text = json.dumps(report, indent=2)
+    if args.out:
+        Path(args.out).write_text(text, encoding="utf-8")
+        print(f"scan report -> {args.out}")
+    else:
+        print(text)
