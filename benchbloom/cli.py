@@ -48,3 +48,9 @@ def _cmd_scan(args: argparse.Namespace) -> int:
         print(f"scan report -> {args.out}")
     else:
         print(text)
+    _print_verdict(summary)
+    return 0
+
+
+def _cmd_index(args: argparse.Namespace) -> int:
+    eng = engine.find_engine(args.engine)
