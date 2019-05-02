@@ -18,3 +18,6 @@ _WS_RE = re.compile(r"\s+")
 _NONALNUM_RE = re.compile(r"[^0-9a-z ]+")
 
 
+@dataclass
+class Record:
+    """A single corpus item after ingestion."""
