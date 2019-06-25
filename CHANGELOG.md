@@ -5,3 +5,4 @@ All notable changes to benchbloom are documented here. The format follows
 to adhere to Semantic Versioning.
 
 ## [0.1.0] - 2026-09-01
+
