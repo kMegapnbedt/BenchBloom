@@ -21,3 +21,7 @@ _NONALNUM_RE = re.compile(r"[^0-9a-z ]+")
 @dataclass
 class Record:
     """A single corpus item after ingestion."""
+
+    rid: str
+    text: str
+    meta: dict = field(default_factory=dict)
