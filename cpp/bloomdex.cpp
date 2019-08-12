@@ -87,3 +87,15 @@ static inline std::uint64_t permute(std::uint64_t x, const HashSeed& hs) {
 static std::vector<std::string> tokenize(const std::string& line, std::size_t min_token) {
     std::vector<std::string> out;
     std::string cur;
+    cur.reserve(24);
+    for (char ch : line) {
+        unsigned char c = static_cast<unsigned char>(ch);
+        if (std::isalnum(c)) {
+            cur.push_back(static_cast<char>(std::tolower(c)));
+        } else if (!cur.empty()) {
+            if (cur.size() >= min_token) out.push_back(cur);
+            cur.clear();
+        }
+    }
+    if (!cur.empty() && cur.size() >= min_token) out.push_back(cur);
+    return out;
