@@ -25,3 +25,6 @@ class Record:
     rid: str
     text: str
     meta: dict = field(default_factory=dict)
+
+
+def normalize(text: str, *, strip_punct: bool = True) -> str:
