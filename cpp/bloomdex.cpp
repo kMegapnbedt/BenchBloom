@@ -99,3 +99,16 @@ static std::vector<std::string> tokenize(const std::string& line, std::size_t mi
     }
     if (!cur.empty() && cur.size() >= min_token) out.push_back(cur);
     return out;
+}
+
+// Compute the K min-hash signature for one record's shingle set.
+static std::vector<std::uint64_t> signature(const std::vector<std::string>& tokens,
+                                            std::size_t ngram,
+                                            const std::vector<HashSeed>& seeds) {
+    const std::size_t k = seeds.size();
+    std::vector<std::uint64_t> sig(k, std::numeric_limits<std::uint64_t>::max());
+    if (tokens.size() < ngram) {
+        // Degenerate: hash the whole (short) record as a single shingle.
+        std::string joined;
+        for (const auto& t : tokens) { joined += t; joined.push_back(' '); }
+        std::uint64_t base = fnv1a(joined);
