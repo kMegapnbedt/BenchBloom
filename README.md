@@ -34,3 +34,15 @@ together:
   It reads at high throughput and streams so that a specimen larger than memory
   still fits on the slide.
 
+No external libraries. No CMake. No test suite shipped (by design — this release
+is a foundation). Just a botanist, a microscope, and a drawer of honest labels.
+
+---
+
+## Why a botanical metaphor, and why it is not just decoration
+
+The metaphor earns its keep because contamination detection genuinely behaves
+like comparing biological specimens:
+
+| Botany | benchbloom |
+| --- | --- |
