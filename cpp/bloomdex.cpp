@@ -112,3 +112,16 @@ static std::vector<std::uint64_t> signature(const std::vector<std::string>& toke
         std::string joined;
         for (const auto& t : tokens) { joined += t; joined.push_back(' '); }
         std::uint64_t base = fnv1a(joined);
+        for (std::size_t i = 0; i < k; ++i) sig[i] = permute(base, seeds[i]);
+        return sig;
+    }
+    std::string shingle;
+    for (std::size_t start = 0; start + ngram <= tokens.size(); ++start) {
+        shingle.clear();
+        for (std::size_t j = 0; j < ngram; ++j) {
+            shingle += tokens[start + j];
+            shingle.push_back('\x1f'); // unit separator, avoids token-boundary collisions
+        }
+        std::uint64_t base = fnv1a(shingle);
+        for (std::size_t i = 0; i < k; ++i) {
+            std::uint64_t h = permute(base, seeds[i]);
