@@ -125,3 +125,15 @@ static std::vector<std::uint64_t> signature(const std::vector<std::string>& toke
         std::uint64_t base = fnv1a(shingle);
         for (std::size_t i = 0; i < k; ++i) {
             std::uint64_t h = permute(base, seeds[i]);
+            if (h < sig[i]) sig[i] = h;
+        }
+    }
+    return sig;
+}
+
+// ---- argument parsing ------------------------------------------------------
+
+struct Args {
+    std::string get(const std::string& key, const std::string& def = "") const {
+        auto it = kv.find(key);
+        return it == kv.end() ? def : it->second;
