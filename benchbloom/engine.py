@@ -15,3 +15,6 @@ from typing import List, Optional
 
 
 class EngineError(RuntimeError):
+    """Raised when the C++ engine is missing or exits non-zero."""
+
+
