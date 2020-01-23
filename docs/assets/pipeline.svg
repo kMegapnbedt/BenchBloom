@@ -9,3 +9,7 @@
       <stop offset="0" stop-color="#ffe9a8"/>
       <stop offset="0.6" stop-color="#f6a5c0"/>
       <stop offset="1" stop-color="#c65b7c"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="0.6"/></filter>
+  </defs>
+
