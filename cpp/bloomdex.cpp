@@ -137,3 +137,16 @@ struct Args {
     std::string get(const std::string& key, const std::string& def = "") const {
         auto it = kv.find(key);
         return it == kv.end() ? def : it->second;
+    }
+    long long geti(const std::string& key, long long def) const {
+        auto it = kv.find(key);
+        if (it == kv.end()) return def;
+        return std::stoll(it->second);
+    }
+    double getd(const std::string& key, double def) const {
+        auto it = kv.find(key);
+        if (it == kv.end()) return def;
+        return std::stod(it->second);
+    }
+    std::unordered_multimap<std::string, std::string>::size_type count(const std::string& key) const {
+        return kv.count(key);
