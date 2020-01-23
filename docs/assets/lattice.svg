@@ -15,3 +15,5 @@
   <text x="20" y="30" fill="#a9d9b2" font-family="monospace" font-size="15">signature lattice · shared shingles glow</text>
 
   <!-- spore-print lattice of the reference corpus -->
+  <g stroke="#3a5c42" stroke-width="0.6" opacity="0.5">
+    <g id="grid"/>
