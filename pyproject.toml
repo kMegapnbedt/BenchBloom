@@ -7,3 +7,5 @@ name = "benchbloom"
 version = "0.1.0"
 description = "Benchmark contamination detector: Python orchestrator + C++17 MinHash engine"
 readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
