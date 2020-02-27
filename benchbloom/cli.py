@@ -60,3 +60,10 @@ def _cmd_index(args: argparse.Namespace) -> int:
         return 3
 
     workdir = Path(args.workdir) if args.workdir else Path(tempfile.mkdtemp(prefix="benchbloom_"))
+    workdir.mkdir(parents=True, exist_ok=True)
+
+    ref = ingest.load(args.ref, fields=args.field, id_field=args.id_field)
+    sub = ingest.load(args.subject, fields=args.field, id_field=args.id_field)
+    ref_norm = workdir / "ref.norm.txt"
+    sub_norm = workdir / "subject.norm.txt"
+    ingest.write_normalized(ref, ref_norm)
