@@ -9,3 +9,4 @@ description = "Benchmark contamination detector: Python orchestrator + C++17 Min
 readme = "README.md"
 requires-python = ">=3.8"
 license = { file = "LICENSE" }
+authors = [{ name = "benchbloom contributors" }]
