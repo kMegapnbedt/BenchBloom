@@ -8,3 +8,4 @@ to adhere to Semantic Versioning.
 
 ### Added
 - Pure-stdlib Python orchestrator (`benchbloom`) with `normalize`, `scan`,
+  `index`, and `report` subcommands.
