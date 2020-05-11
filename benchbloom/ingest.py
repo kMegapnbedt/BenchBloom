@@ -28,3 +28,6 @@ class Record:
 
 
 def normalize(text: str, *, strip_punct: bool = True) -> str:
+    """Lowercase, NFKC-fold, collapse whitespace; optionally drop punctuation.
+
+    The output is stable and idempotent, which matters for reproducible
