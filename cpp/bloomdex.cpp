@@ -150,3 +150,16 @@ struct Args {
     }
     std::unordered_multimap<std::string, std::string>::size_type count(const std::string& key) const {
         return kv.count(key);
+    }
+    std::unordered_multimap<std::string, std::string> kv;
+};
+
+static Args parse_args(int argc, char** argv, int from) {
+    Args a;
+    for (int i = from; i < argc; ++i) {
+        std::string tok = argv[i];
+        if (tok.rfind("--", 0) == 0) {
+            std::string key = tok.substr(2);
+            if (i + 1 < argc && std::string(argv[i + 1]).rfind("--", 0) != 0) {
+                a.kv.emplace(key, argv[++i]);
+            } else {
