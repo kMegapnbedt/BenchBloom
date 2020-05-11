@@ -11,3 +11,4 @@ Two tiny corpora ship here so you can watch benchbloom flag contamination:
 ```bash
 python -m benchbloom scan \
   --ref examples/benchmark.jsonl \
+  --subject examples/training.jsonl \
