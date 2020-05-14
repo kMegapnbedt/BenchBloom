@@ -18,3 +18,7 @@ def shingles(tokens: Sequence[str], n: int) -> Set[str]:
         raise ValueError("n must be >= 1")
     if len(tokens) < n:
         return {"\x1f".join(tokens)} if tokens else set()
+    return {"\x1f".join(tokens[i : i + n]) for i in range(len(tokens) - n + 1)}
+
+
+def jaccard(a: Set[str], b: Set[str]) -> float:
