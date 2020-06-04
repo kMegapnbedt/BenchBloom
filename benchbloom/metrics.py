@@ -22,3 +22,7 @@ def shingles(tokens: Sequence[str], n: int) -> Set[str]:
 
 
 def jaccard(a: Set[str], b: Set[str]) -> float:
+    """Exact Jaccard similarity |A∩B| / |A∪B|."""
+    if not a and not b:
+        return 0.0
+    inter = len(a & b)
