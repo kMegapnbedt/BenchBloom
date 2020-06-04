@@ -6,3 +6,5 @@ under "Planned" is aspirational and not yet built.
 
 ## Foundation (verified in this release)
 
+- [x] **M1 — Ingestion & normalization.** JSONL/text loaders with tolerant
+  parsing and deterministic NFKC + whitespace/punctuation normalization.
