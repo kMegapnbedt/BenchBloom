@@ -12,3 +12,5 @@ Two tiny corpora ship here so you can watch benchbloom flag contamination:
 python -m benchbloom scan \
   --ref examples/benchmark.jsonl \
   --subject examples/training.jsonl \
+  --field text --ngram 4 --threshold 0.3
+```
