@@ -67,3 +67,9 @@ def _cmd_index(args: argparse.Namespace) -> int:
     ref_norm = workdir / "ref.norm.txt"
     sub_norm = workdir / "subject.norm.txt"
     ingest.write_normalized(ref, ref_norm)
+    ingest.write_normalized(sub, sub_norm)
+
+    ref_sig = workdir / "ref.sig"
+    sub_sig = workdir / "subject.sig"
+    print(engine.sign(eng, str(ref_norm), str(ref_sig), k=args.k, ngram=args.ngram))
+    print(engine.sign(eng, str(sub_norm), str(sub_sig), k=args.k, ngram=args.ngram))
