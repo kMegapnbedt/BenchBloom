@@ -18,3 +18,5 @@
   <g stroke="#3a5c42" stroke-width="0.6" opacity="0.5">
     <g id="grid"/>
     <path d="M60,60 H460 M60,110 H460 M60,160 H460 M60,210 H460 M60,260 H460"/>
+    <path d="M110,50 V270 M180,50 V270 M250,50 V270 M320,50 V270 M390,50 V270"/>
+  </g>
