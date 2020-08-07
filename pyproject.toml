@@ -11,3 +11,4 @@ requires-python = ">=3.8"
 license = { file = "LICENSE" }
 authors = [{ name = "benchbloom contributors" }]
 keywords = ["benchmark", "contamination", "leakage", "minhash", "jaccard", "ngram", "dedup"]
+classifiers = [
