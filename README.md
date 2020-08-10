@@ -58,3 +58,15 @@ two identical documents. It looks like one small benchmark question pressed flat
 inside a sprawling web-scraped paragraph. Jaccard punishes that size mismatch;
 containment does not. benchbloom triggers on containment by default and reports
 Jaccard alongside it, so you can see both the strict and the sensitive reading.
+
+---
+
+## The bench layout
+
+```
+benchbloom/
+├── benchbloom/                # the botanist (pure stdlib Python)
+│   ├── __init__.py
+│   ├── __main__.py            # python -m benchbloom
+│   ├── cli.py                 # normalize | scan | index | report
+│   ├── ingest.py              # JSONL/text loaders + normalization
