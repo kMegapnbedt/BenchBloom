@@ -73,3 +73,9 @@ def _cmd_index(args: argparse.Namespace) -> int:
     sub_sig = workdir / "subject.sig"
     print(engine.sign(eng, str(ref_norm), str(ref_sig), k=args.k, ngram=args.ngram))
     print(engine.sign(eng, str(sub_norm), str(sub_sig), k=args.k, ngram=args.ngram))
+
+    match_out = Path(args.out) if args.out else workdir / "match.tsv"
+    print(engine.match(eng, str(ref_sig), str(sub_sig), str(match_out),
+                       threshold=args.threshold))
+    rows = engine.parse_match_report(match_out)
+
