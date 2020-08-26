@@ -70,3 +70,15 @@ benchbloom/
 │   ├── __main__.py            # python -m benchbloom
 │   ├── cli.py                 # normalize | scan | index | report
 │   ├── ingest.py              # JSONL/text loaders + normalization
+│   ├── metrics.py             # exact n-gram shingling, Jaccard, containment
+│   └── engine.py              # bridge to the C++ microscope
+├── cpp/                       # the microscope (C++17, no deps)
+│   ├── bloomdex.cpp           # sign | match | self
+│   └── build.sh               # direct clang++/g++ build
+├── examples/                  # two pressed specimens + a walkthrough
+│   ├── benchmark.jsonl
+│   ├── training.jsonl
+│   └── README.md
+├── docs/assets/               # two animated SVG plates
+│   ├── pipeline.svg
+│   └── lattice.svg
