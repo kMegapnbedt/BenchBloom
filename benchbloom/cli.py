@@ -79,3 +79,10 @@ def _cmd_index(args: argparse.Namespace) -> int:
                        threshold=args.threshold))
     rows = engine.parse_match_report(match_out)
 
+    contaminated = {r.ref_id for r in rows}
+    summary = {
+        "ref_items": len(ref),
+        "flagged_pairs": len(rows),
+        "contaminated_ref_items": len(contaminated),
+        "contamination_rate": round(len(contaminated) / len(ref), 4) if ref else 0.0,
+        "peak_overlap": round(max((r.jaccard for r in rows), default=0.0), 4),
