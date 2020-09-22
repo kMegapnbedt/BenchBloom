@@ -10,3 +10,4 @@ under "Planned" is aspirational and not yet built.
   parsing and deterministic NFKC + whitespace/punctuation normalization.
   Implemented in `benchbloom/ingest.py`.
 - [x] **M2 — Exact leakage metrics.** Token n-gram shingling with Jaccard and
+  containment scoring and a report summarizer. Implemented in
