@@ -14,3 +14,4 @@ python -m benchbloom scan \
   --subject examples/training.jsonl \
   --field text --ngram 4 --threshold 0.3
 ```
+
