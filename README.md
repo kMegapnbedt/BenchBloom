@@ -82,3 +82,15 @@ benchbloom/
 ├── docs/assets/               # two animated SVG plates
 │   ├── pipeline.svg
 │   └── lattice.svg
+├── .github/workflows/ci.yml   # compile C++, syntax-check Python, smoke test
+├── Makefile                   # make  ->  cpp/bloomdex
+├── pyproject.toml
+├── CHANGELOG.md · ROADMAP.md · LICENSE
+```
+
+![lattice](docs/assets/lattice.svg)
+
+---
+
+## Preparing the bench (build the microscope)
+
