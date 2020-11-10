@@ -15,3 +15,4 @@ python -m benchbloom scan \
   --field text --ngram 4 --threshold 0.3
 ```
 
+You should see `b1`, `b2`, and `b4` flagged with high containment, and a
