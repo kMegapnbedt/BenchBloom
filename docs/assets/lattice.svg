@@ -22,3 +22,5 @@
   </g>
 
   <!-- two overlapping signature clouds that drift together -->
+  <g>
+    <circle cx="200" cy="170" r="80" fill="url(#ref)">
