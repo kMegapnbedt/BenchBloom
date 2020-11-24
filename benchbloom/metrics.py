@@ -26,3 +26,8 @@ def jaccard(a: Set[str], b: Set[str]) -> float:
     if not a and not b:
         return 0.0
     inter = len(a & b)
+    union = len(a | b)
+    return inter / union if union else 0.0
+
+
+def containment(a: Set[str], b: Set[str]) -> float:
