@@ -10,3 +10,4 @@ to adhere to Semantic Versioning.
 - Pure-stdlib Python orchestrator (`benchbloom`) with `normalize`, `scan`,
   `index`, and `report` subcommands.
 - JSONL / text ingestion with tolerant parsing and NFKC-based normalization.
+- Exact n-gram shingling with Jaccard and containment leakage metrics.
