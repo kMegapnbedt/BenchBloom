@@ -35,3 +35,6 @@ def normalize(text: str, *, strip_punct: bool = True) -> str:
     """
     if not text:
         return ""
+    text = unicodedata.normalize("NFKC", text)
+    text = text.lower()
+    if strip_punct:
