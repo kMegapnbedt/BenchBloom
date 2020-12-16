@@ -17,3 +17,7 @@
   <text x="24" y="34" fill="#a9d9b2" font-family="monospace" font-size="16">benchbloom · contamination forensics</text>
 
   <!-- pipeline stages -->
+  <g font-family="monospace" font-size="12" fill="#7fae86">
+    <text x="60"  y="210">ingest</text>
+    <text x="210" y="210">normalize</text>
+    <text x="380" y="210">MinHash</text>
