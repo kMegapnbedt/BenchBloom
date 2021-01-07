@@ -86,3 +86,9 @@ def _cmd_index(args: argparse.Namespace) -> int:
         "contaminated_ref_items": len(contaminated),
         "contamination_rate": round(len(contaminated) / len(ref), 4) if ref else 0.0,
         "peak_overlap": round(max((r.jaccard for r in rows), default=0.0), 4),
+    }
+    print(f"match report -> {match_out}")
+    _print_verdict(summary)
+    return 0
+
+
