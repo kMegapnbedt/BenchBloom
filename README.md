@@ -94,3 +94,15 @@ benchbloom/
 
 ## Preparing the bench (build the microscope)
 
+The Python botanist needs nothing but a standard Python 3.8+ interpreter. The
+C++ microscope must be ground from its single translation unit. Pick either
+door — both call the compiler directly, no CMake in sight.
+
+```bash
+# Door 1: Makefile
+make                    # produces cpp/bloomdex
+
+# Door 2: the build script (auto-detects clang++ or g++)
+bash cpp/build.sh
+
+# Door 3: by hand, if you enjoy the sound of it
