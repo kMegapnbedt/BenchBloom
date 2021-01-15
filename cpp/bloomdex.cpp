@@ -163,3 +163,16 @@ static Args parse_args(int argc, char** argv, int from) {
             if (i + 1 < argc && std::string(argv[i + 1]).rfind("--", 0) != 0) {
                 a.kv.emplace(key, argv[++i]);
             } else {
+                a.kv.emplace(key, "1");
+            }
+        }
+    }
+    return a;
+}
+
+// ---- signature record I/O --------------------------------------------------
+
+struct SigRecord {
+    std::string id;
+    std::uint64_t token_count = 0;
+    std::vector<std::uint64_t> sig;
