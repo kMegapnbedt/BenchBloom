@@ -106,3 +106,15 @@ make                    # produces cpp/bloomdex
 bash cpp/build.sh
 
 # Door 3: by hand, if you enjoy the sound of it
+g++ -std=c++17 -O2 -Wall -Wextra -pedantic cpp/bloomdex.cpp -o cpp/bloomdex
+```
+
+On Windows with MinGW the same one-liner works; the resulting binary is
+`cpp/bloomdex.exe`, and the Python bridge already knows to look for the `.exe`
+suffix.
+
+---
+
+## A first pressing (the exact reading)
+
+You do not need the microscope to get an exact answer on modest specimens. The
