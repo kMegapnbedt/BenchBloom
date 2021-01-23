@@ -38,3 +38,7 @@ def normalize(text: str, *, strip_punct: bool = True) -> str:
     text = unicodedata.normalize("NFKC", text)
     text = text.lower()
     if strip_punct:
+        text = _NONALNUM_RE.sub(" ", text)
+    text = _WS_RE.sub(" ", text).strip()
+    return text
+
