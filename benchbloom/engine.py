@@ -22,3 +22,6 @@ def find_engine(explicit: Optional[str] = None) -> Optional[str]:
     """Resolve the bloomdex binary: explicit path, PATH, or local build dirs."""
     if explicit:
         p = Path(explicit)
+        return str(p) if p.exists() else None
+    on_path = shutil.which("bloomdex")
+    if on_path:
