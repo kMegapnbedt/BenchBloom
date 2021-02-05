@@ -11,3 +11,5 @@ under "Planned" is aspirational and not yet built.
   Implemented in `benchbloom/ingest.py`.
 - [x] **M2 — Exact leakage metrics.** Token n-gram shingling with Jaccard and
   containment scoring and a report summarizer. Implemented in
+  `benchbloom/metrics.py`.
+- [x] **M3 — C++17 MinHash engine.** `bloomdex` builds min-hash signatures over
