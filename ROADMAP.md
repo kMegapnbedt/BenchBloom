@@ -13,3 +13,5 @@ under "Planned" is aspirational and not yet built.
   containment scoring and a report summarizer. Implemented in
   `benchbloom/metrics.py`.
 - [x] **M3 — C++17 MinHash engine.** `bloomdex` builds min-hash signatures over
+  token shingles and scores candidate overlap; compiles cleanly with `g++`
+  `-std=c++17`. Implemented in `cpp/bloomdex.cpp`.
