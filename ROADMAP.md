@@ -15,3 +15,4 @@ under "Planned" is aspirational and not yet built.
 - [x] **M3 — C++17 MinHash engine.** `bloomdex` builds min-hash signatures over
   token shingles and scores candidate overlap; compiles cleanly with `g++`
   `-std=c++17`. Implemented in `cpp/bloomdex.cpp`.
+- [x] **M4 — Python↔C++ orchestration.** The `index` subcommand normalizes,
