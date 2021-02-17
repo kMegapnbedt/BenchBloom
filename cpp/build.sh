@@ -7,3 +7,4 @@ SRC="$HERE/bloomdex.cpp"
 OUT="$HERE/bloomdex"
 
 CXX="${CXX:-}"
+if [ -z "$CXX" ]; then
