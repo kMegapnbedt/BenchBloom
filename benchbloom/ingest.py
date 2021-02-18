@@ -42,3 +42,6 @@ def normalize(text: str, *, strip_punct: bool = True) -> str:
     text = _WS_RE.sub(" ", text).strip()
     return text
 
+
+def _extract_text(obj: dict, fields: List[str]) -> str:
+    """Pull and concatenate the configured text fields from a JSON object."""
