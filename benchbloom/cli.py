@@ -92,3 +92,9 @@ def _cmd_index(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_report(args: argparse.Namespace) -> int:
+    rows = engine.parse_match_report(args.input)
+    contaminated = {r.ref_id for r in rows}
+    print(f"flagged pairs        : {len(rows)}")
+    print(f"contaminated ref ids : {len(contaminated)}")
+    if rows:
