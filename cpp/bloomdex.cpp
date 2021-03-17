@@ -188,3 +188,16 @@ static void write_sig(std::ostream& os, const SigRecord& r) {
 }
 
 static bool read_sig_line(const std::string& line, SigRecord& r) {
+    std::size_t t1 = line.find('\t');
+    if (t1 == std::string::npos) return false;
+    std::size_t t2 = line.find('\t', t1 + 1);
+    if (t2 == std::string::npos) return false;
+    r.id = line.substr(0, t1);
+    r.token_count = std::stoull(line.substr(t1 + 1, t2 - t1 - 1));
+    r.sig.clear();
+    std::istringstream ss(line.substr(t2 + 1));
+    std::uint64_t v;
+    while (ss >> v) r.sig.push_back(v);
+    return !r.sig.empty();
+}
+
