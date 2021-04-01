@@ -48,3 +48,7 @@ def _extract_text(obj: dict, fields: List[str]) -> str:
     parts: List[str] = []
     for f in fields:
         val = obj.get(f)
+        if isinstance(val, str):
+            parts.append(val)
+        elif isinstance(val, (list, tuple)):
+            parts.extend(str(v) for v in val if isinstance(v, (str, int, float)))
