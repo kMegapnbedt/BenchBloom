@@ -25,3 +25,5 @@
   <g>
     <circle cx="200" cy="170" r="80" fill="url(#ref)">
       <animate attributeName="cx" values="200;235;200" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="170" r="80" fill="url(#sub)">
