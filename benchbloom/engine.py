@@ -25,3 +25,6 @@ def find_engine(explicit: Optional[str] = None) -> Optional[str]:
         return str(p) if p.exists() else None
     on_path = shutil.which("bloomdex")
     if on_path:
+        return on_path
+    here = Path(__file__).resolve().parent.parent
+    for cand in (here / "cpp" / "bloomdex", here / "cpp" / "bloomdex.exe",
