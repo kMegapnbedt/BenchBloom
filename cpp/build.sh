@@ -8,3 +8,4 @@ OUT="$HERE/bloomdex"
 
 CXX="${CXX:-}"
 if [ -z "$CXX" ]; then
+    if command -v clang++ >/dev/null 2>&1; then CXX=clang++
