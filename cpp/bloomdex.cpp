@@ -201,3 +201,16 @@ static bool read_sig_line(const std::string& line, SigRecord& r) {
     return !r.sig.empty();
 }
 
+static double estimate_jaccard(const std::vector<std::uint64_t>& a,
+                               const std::vector<std::uint64_t>& b) {
+    if (a.size() != b.size() || a.empty()) return 0.0;
+    std::size_t match = 0;
+    for (std::size_t i = 0; i < a.size(); ++i) if (a[i] == b[i]) ++match;
+    return static_cast<double>(match) / static_cast<double>(a.size());
+}
+
+// ---- subcommands -----------------------------------------------------------
+
+static int cmd_sign(const Args& a) {
+    std::string input = a.get("input");
+    std::string out = a.get("out");
