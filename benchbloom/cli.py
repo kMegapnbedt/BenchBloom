@@ -98,3 +98,9 @@ def _cmd_report(args: argparse.Namespace) -> int:
     print(f"flagged pairs        : {len(rows)}")
     print(f"contaminated ref ids : {len(contaminated)}")
     if rows:
+        top = sorted(rows, key=lambda r: r.jaccard, reverse=True)[: args.top]
+        print("top overlaps:")
+        for r in top:
+            print(f"  {r.ref_id:>10}  <->  {r.subject_id:<10}  jaccard={r.jaccard:.3f}")
+    return 0
+
