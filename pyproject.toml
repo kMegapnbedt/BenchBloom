@@ -12,3 +12,5 @@ license = { file = "LICENSE" }
 authors = [{ name = "benchbloom contributors" }]
 keywords = ["benchmark", "contamination", "leakage", "minhash", "jaccard", "ngram", "dedup"]
 classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
