@@ -31,3 +31,7 @@ def jaccard(a: Set[str], b: Set[str]) -> float:
 
 
 def containment(a: Set[str], b: Set[str]) -> float:
+    """Containment of A in B: |A∩B| / |A|. Sensitive to short-in-long leakage."""
+    if not a:
+        return 0.0
+    return len(a & b) / len(a)
