@@ -118,3 +118,15 @@ suffix.
 ## A first pressing (the exact reading)
 
 You do not need the microscope to get an exact answer on modest specimens. The
+botanist can read venation directly:
+
+```bash
+python -m benchbloom scan \
+  --ref examples/benchmark.jsonl \
+  --subject examples/training.jsonl \
+  --field text --ngram 4 --threshold 0.3
+```
+
+This prints a JSON report to stdout and a one-line **verdict** to stderr. In the
+shipped example, benchmark items `b1`, `b2`, and `b4` were quietly transplanted
+into the training set, and the scan will flag them with high containment. Items
