@@ -11,3 +11,4 @@ to adhere to Semantic Versioning.
   `index`, and `report` subcommands.
 - JSONL / text ingestion with tolerant parsing and NFKC-based normalization.
 - Exact n-gram shingling with Jaccard and containment leakage metrics.
+- C++17 engine `bloomdex` implementing token-shingle MinHash signatures and
