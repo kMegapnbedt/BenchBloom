@@ -21,3 +21,7 @@
     <text x="60"  y="210">ingest</text>
     <text x="210" y="210">normalize</text>
     <text x="380" y="210">MinHash</text>
+    <text x="560" y="210">match</text>
+  </g>
+
+  <!-- flowing spores along the pipeline -->
