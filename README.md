@@ -130,3 +130,15 @@ python -m benchbloom scan \
 This prints a JSON report to stdout and a one-line **verdict** to stderr. In the
 shipped example, benchmark items `b1`, `b2`, and `b4` were quietly transplanted
 into the training set, and the scan will flag them with high containment. Items
+`b3` (a fact about prime numbers) and `b5` (an invented city) never took root
+and stay clean.
+
+The report looks like this:
+
+```json
+{
+  "summary": {
+    "ref_items": 5,
+    "flagged_pairs": 3,
+    "contaminated_ref_items": 3,
+    "contamination_rate": 0.6,
