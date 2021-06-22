@@ -16,3 +16,5 @@ under "Planned" is aspirational and not yet built.
   token shingles and scores candidate overlap; compiles cleanly with `g++`
   `-std=c++17`. Implemented in `cpp/bloomdex.cpp`.
 - [x] **M4 — Python↔C++ orchestration.** The `index` subcommand normalizes,
+  signs, and matches through the engine bridge in `benchbloom/engine.py`.
+
