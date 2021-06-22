@@ -104,3 +104,10 @@ def _cmd_report(args: argparse.Namespace) -> int:
             print(f"  {r.ref_id:>10}  <->  {r.subject_id:<10}  jaccard={r.jaccard:.3f}")
     return 0
 
+
+def _print_verdict(summary: dict) -> None:
+    rate = summary.get("contamination_rate", 0.0)
+    if rate == 0.0:
+        verdict = "CLEAN — no leakage above threshold"
+    elif rate < 0.05:
+        verdict = "TRACE — isolated overlap, inspect flagged pairs"
