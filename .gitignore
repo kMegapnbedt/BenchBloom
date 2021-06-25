@@ -6,3 +6,4 @@ build/
 dist/
 
 # C++ engine artifacts
+cpp/bloomdex
