@@ -39,3 +39,7 @@ def containment(a: Set[str], b: Set[str]) -> float:
 
 @dataclass
 class LeakPair:
+    ref_id: str
+    subject_id: str
+    jaccard: float
+    containment: float
