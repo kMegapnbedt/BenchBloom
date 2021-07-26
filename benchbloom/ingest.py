@@ -59,3 +59,6 @@ def read_jsonl(path: Path, fields: List[str], id_field: str | None = None) -> It
     """Stream a JSONL file into Records, skipping malformed lines gracefully."""
     with path.open("r", encoding="utf-8") as fh:
         for i, line in enumerate(fh):
+            line = line.strip()
+            if not line:
+                continue
