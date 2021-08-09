@@ -6,3 +6,4 @@ BIN      := cpp/bloomdex
 
 .PHONY: all clean
 
+all: $(BIN)
