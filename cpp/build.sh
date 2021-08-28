@@ -11,3 +11,4 @@ if [ -z "$CXX" ]; then
     if command -v clang++ >/dev/null 2>&1; then CXX=clang++
     elif command -v g++ >/dev/null 2>&1; then CXX=g++
     else echo "error: no clang++ or g++ found on PATH" >&2; exit 1
+    fi
