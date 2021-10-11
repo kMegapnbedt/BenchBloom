@@ -13,3 +13,4 @@ if [ -z "$CXX" ]; then
     else echo "error: no clang++ or g++ found on PATH" >&2; exit 1
     fi
 fi
+
