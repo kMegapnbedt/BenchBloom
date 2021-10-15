@@ -47,3 +47,7 @@ class LeakPair:
 
 def _tokenize(text: str) -> List[str]:
     return text.split()
+
+
+def build_shingle_index(records, n: int) -> Dict[str, Set[str]]:
+    """Map record id -> shingle set for a list of (id, normalized_text)."""
