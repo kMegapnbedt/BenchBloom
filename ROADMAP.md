@@ -18,3 +18,5 @@ under "Planned" is aspirational and not yet built.
 - [x] **M4 — Python↔C++ orchestration.** The `index` subcommand normalizes,
   signs, and matches through the engine bridge in `benchbloom/engine.py`.
 
+## Planned (not yet implemented)
+
