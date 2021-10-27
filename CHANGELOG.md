@@ -12,3 +12,4 @@ to adhere to Semantic Versioning.
 - JSONL / text ingestion with tolerant parsing and NFKC-based normalization.
 - Exact n-gram shingling with Jaccard and containment leakage metrics.
 - C++17 engine `bloomdex` implementing token-shingle MinHash signatures and
+  candidate overlap scoring (`sign`, `match`, `self`).
