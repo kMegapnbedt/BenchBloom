@@ -51,3 +51,7 @@ def _tokenize(text: str) -> List[str]:
 
 def build_shingle_index(records, n: int) -> Dict[str, Set[str]]:
     """Map record id -> shingle set for a list of (id, normalized_text)."""
+    index: Dict[str, Set[str]] = {}
+    for rid, text in records:
+        index[rid] = shingles(_tokenize(text), n)
+    return index
