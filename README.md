@@ -142,3 +142,15 @@ The report looks like this:
     "flagged_pairs": 3,
     "contaminated_ref_items": 3,
     "contamination_rate": 0.6,
+    "peak_overlap": 1.0
+  },
+  "pairs": [
+    { "ref_id": "b1", "subject_id": "t5", "jaccard": 0.72, "containment": 1.0 },
+    ...
+  ]
+}
+```
+
+The **verdict** grades the contamination rate on a simple herbarium scale:
+
+- `CLEAN` — nothing germinated above threshold.
