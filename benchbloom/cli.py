@@ -117,3 +117,9 @@ def _print_verdict(summary: dict) -> None:
         verdict = "HEAVY — benchmark likely compromised"
     print(f"verdict: {verdict} (rate={rate})", file=sys.stderr)
 
+
+def build_parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser(prog="benchbloom",
+                                description="benchmark contamination detector")
+    p.add_argument("--version", action="version", version=f"benchbloom {__version__}")
+    sub = p.add_subparsers(dest="cmd", required=True)
