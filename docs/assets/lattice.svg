@@ -29,3 +29,4 @@
     <circle cx="320" cy="170" r="80" fill="url(#sub)">
       <animate attributeName="cx" values="320;285;320" dur="6s" repeatCount="indefinite"/>
     </circle>
+  </g>
