@@ -30,3 +30,5 @@
       <animate attributeName="cx" values="320;285;320" dur="6s" repeatCount="indefinite"/>
     </circle>
   </g>
+
+  <!-- matched min-positions light up where the clouds meet -->
