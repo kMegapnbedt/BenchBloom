@@ -55,3 +55,7 @@ def build_shingle_index(records, n: int) -> Dict[str, Set[str]]:
     for rid, text in records:
         index[rid] = shingles(_tokenize(text), n)
     return index
+
+
+def cross_leakage(ref_index: Dict[str, Set[str]],
+                  subject_index: Dict[str, Set[str]],
