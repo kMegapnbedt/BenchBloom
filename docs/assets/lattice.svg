@@ -32,3 +32,5 @@
   </g>
 
   <!-- matched min-positions light up where the clouds meet -->
+  <g fill="#ffe9a8">
+    <circle cx="250" cy="150" r="3">
