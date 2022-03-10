@@ -14,3 +14,4 @@ to adhere to Semantic Versioning.
 - C++17 engine `bloomdex` implementing token-shingle MinHash signatures and
   candidate overlap scoring (`sign`, `match`, `self`).
 - Direct `g++`/`clang++` build via `Makefile` and `cpp/build.sh` (no CMake).
+- Worked examples: reference/subject corpora and an end-to-end walkthrough.
