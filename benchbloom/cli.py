@@ -123,3 +123,10 @@ def build_parser() -> argparse.ArgumentParser:
                                 description="benchmark contamination detector")
     p.add_argument("--version", action="version", version=f"benchbloom {__version__}")
     sub = p.add_subparsers(dest="cmd", required=True)
+
+    def add_common(sp):
+        sp.add_argument("--field", action="append", help="JSON text field(s) to read")
+        sp.add_argument("--id-field", help="JSON field to use as record id")
+        sp.add_argument("--ngram", type=int, default=5, help="token n-gram size")
+
+    pn = sub.add_parser("normalize", help="ingest and normalize a corpus")
