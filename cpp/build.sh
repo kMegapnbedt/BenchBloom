@@ -14,3 +14,4 @@ if [ -z "$CXX" ]; then
     fi
 fi
 
+FLAGS="-std=c++17 -O2 -Wall -Wextra -pedantic"
