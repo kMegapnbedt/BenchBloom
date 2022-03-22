@@ -214,3 +214,15 @@ static double estimate_jaccard(const std::vector<std::uint64_t>& a,
 static int cmd_sign(const Args& a) {
     std::string input = a.get("input");
     std::string out = a.get("out");
+    if (input.empty() || out.empty()) {
+        std::cerr << "sign: --input and --out required\n";
+        return 2;
+    }
+    std::size_t k = static_cast<std::size_t>(a.geti("k", 128));
+    std::size_t ngram = static_cast<std::size_t>(a.geti("ngram", 5));
+    std::size_t min_token = static_cast<std::size_t>(a.geti("min-token", 1));
+    std::uint64_t seed = static_cast<std::uint64_t>(a.geti("seed", 0));
+
+    std::ifstream in(input);
+    if (!in) { std::cerr << "sign: cannot open input: " << input << "\n"; return 3; }
+    std::ofstream ofs(out);
