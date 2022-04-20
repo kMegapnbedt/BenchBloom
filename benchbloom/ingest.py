@@ -62,3 +62,6 @@ def read_jsonl(path: Path, fields: List[str], id_field: str | None = None) -> It
             line = line.strip()
             if not line:
                 continue
+            try:
+                obj = json.loads(line)
+            except json.JSONDecodeError:
