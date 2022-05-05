@@ -25,3 +25,7 @@
   </g>
 
   <!-- flowing spores along the pipeline -->
+  <g fill="#9fe6ad">
+    <circle r="4" cx="0" cy="0">
+      <animateMotion dur="4s" repeatCount="indefinite"
+        path="M70,150 C180,120 300,180 400,140 C500,110 600,150 640,140"/>
