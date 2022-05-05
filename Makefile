@@ -8,3 +8,4 @@ BIN      := cpp/bloomdex
 
 all: $(BIN)
 
+$(BIN): $(SRC)
