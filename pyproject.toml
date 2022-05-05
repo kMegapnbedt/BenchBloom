@@ -17,3 +17,4 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: C++",
+    "Topic :: Scientific/Engineering",
