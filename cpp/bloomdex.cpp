@@ -226,3 +226,16 @@ static int cmd_sign(const Args& a) {
     std::ifstream in(input);
     if (!in) { std::cerr << "sign: cannot open input: " << input << "\n"; return 3; }
     std::ofstream ofs(out);
+    if (!ofs) { std::cerr << "sign: cannot open out: " << out << "\n"; return 3; }
+
+    auto seeds = make_seeds(k, seed);
+    std::string line;
+    std::uint64_t idx = 0;
+    while (std::getline(in, line)) {
+        auto tokens = tokenize(line, min_token);
+        if (tokens.empty()) { ++idx; continue; }
+        SigRecord r;
+        r.id = "r" + std::to_string(idx);
+        r.token_count = tokens.size();
+        r.sig = signature(tokens, ngram, seeds);
+        write_sig(ofs, r);
