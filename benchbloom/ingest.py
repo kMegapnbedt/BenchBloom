@@ -65,3 +65,7 @@ def read_jsonl(path: Path, fields: List[str], id_field: str | None = None) -> It
             try:
                 obj = json.loads(line)
             except json.JSONDecodeError:
+                # Tolerate the occasional broken line rather than aborting a scan.
+                continue
+            if not isinstance(obj, dict):
+                obj = {"text": str(obj)}
