@@ -154,3 +154,15 @@ The report looks like this:
 The **verdict** grades the contamination rate on a simple herbarium scale:
 
 - `CLEAN` — nothing germinated above threshold.
+- `TRACE` — an isolated seedling; inspect the flagged pairs by hand.
+- `ELEVATED` — meaningful contamination; the benchmark is compromised in part.
+- `HEAVY` — the specimen is overgrown; treat scores from it with suspicion.
+
+---
+
+## The microscope reading (MinHash at scale)
+
+Exact shingling is O(unique-shingles) in memory and quadratic in specimens. When
+the corpus grows past comfort, hand it to the microscope. The `index` subcommand
+orchestrates the whole assay: press both specimens, take their spore prints, and
+overlay the prints.
