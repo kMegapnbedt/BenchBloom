@@ -15,3 +15,4 @@ if [ -z "$CXX" ]; then
 fi
 
 FLAGS="-std=c++17 -O2 -Wall -Wextra -pedantic"
+echo "building bloomdex with $CXX ($FLAGS)"
