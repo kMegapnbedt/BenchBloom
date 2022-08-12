@@ -239,3 +239,16 @@ static int cmd_sign(const Args& a) {
         r.token_count = tokens.size();
         r.sig = signature(tokens, ngram, seeds);
         write_sig(ofs, r);
+        ++idx;
+    }
+    std::cerr << "sign: wrote signatures for " << idx << " records (k=" << k
+              << ", ngram=" << ngram << ")\n";
+    return 0;
+}
+
+static std::vector<SigRecord> load_sigs(const std::string& path, int& err) {
+    std::vector<SigRecord> recs;
+    std::ifstream in(path);
+    if (!in) { err = 3; return recs; }
+    std::string line;
+    while (std::getline(in, line)) {
