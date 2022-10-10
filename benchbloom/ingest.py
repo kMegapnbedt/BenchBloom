@@ -69,3 +69,6 @@ def read_jsonl(path: Path, fields: List[str], id_field: str | None = None) -> It
                 continue
             if not isinstance(obj, dict):
                 obj = {"text": str(obj)}
+            text = _extract_text(obj, fields) if fields else str(obj.get("text", ""))
+            rid = str(obj.get(id_field, f"j{i}")) if id_field else f"j{i}"
+            yield Record(rid=rid, text=text, meta={k: obj[k] for k in obj if k not in fields})
