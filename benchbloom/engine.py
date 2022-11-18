@@ -32,3 +32,6 @@ def find_engine(explicit: Optional[str] = None) -> Optional[str]:
         if cand.exists():
             return str(cand)
     return None
+
+
+def _run(engine: str, args: List[str]) -> str:
