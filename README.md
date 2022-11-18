@@ -178,3 +178,15 @@ python -m benchbloom report match.tsv
 ```
 
 Under the hood the botanist:
+
+1. Loads and normalizes both corpora, writing one dried record per line.
+2. Calls `bloomdex sign` on each to produce a signature file — `K` 64-bit
+   min-hashes per record, drawn from `K` universal hash seeds over the record's
+   shingle set.
+3. Calls `bloomdex match` to compare every reference print against every subject
+   print, emitting a TSV of pairs whose *estimated* Jaccard clears the
+   threshold.
+
+The estimate is honest but approximate. The variance of a MinHash Jaccard
+estimate shrinks roughly with `1/√K`, so `--k 128` gives you a standard error
+near 0.09 and `--k 512` roughly halves it. When in doubt, confirm a flagged pair
