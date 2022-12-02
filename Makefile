@@ -9,3 +9,4 @@ BIN      := cpp/bloomdex
 all: $(BIN)
 
 $(BIN): $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(BIN)
