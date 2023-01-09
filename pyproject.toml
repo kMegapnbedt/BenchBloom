@@ -18,3 +18,5 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: C++",
     "Topic :: Scientific/Engineering",
+]
+dependencies = []
