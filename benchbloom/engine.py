@@ -35,3 +35,7 @@ def find_engine(explicit: Optional[str] = None) -> Optional[str]:
 
 
 def _run(engine: str, args: List[str]) -> str:
+    proc = subprocess.run([engine, *args], capture_output=True, text=True)
+    if proc.returncode != 0:
+        raise EngineError(f"bloomdex {' '.join(args)} failed "
+                          f"(code {proc.returncode}): {proc.stderr.strip()}")
