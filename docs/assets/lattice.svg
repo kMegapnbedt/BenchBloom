@@ -36,3 +36,4 @@
     <circle cx="250" cy="150" r="3">
       <animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" repeatCount="indefinite"/>
     </circle>
+    <circle cx="270" cy="185" r="3">
