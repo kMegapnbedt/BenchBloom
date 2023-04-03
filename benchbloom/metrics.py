@@ -59,3 +59,8 @@ def build_shingle_index(records, n: int) -> Dict[str, Set[str]]:
 
 def cross_leakage(ref_index: Dict[str, Set[str]],
                   subject_index: Dict[str, Set[str]],
+                  *, threshold: float = 0.3,
+                  use_containment: bool = True) -> List[LeakPair]:
+    """Score every ref x subject pair; keep those at or above threshold.
+
+    Uses containment as the trigger metric by default because contamination
