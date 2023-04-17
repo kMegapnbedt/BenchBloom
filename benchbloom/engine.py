@@ -39,3 +39,6 @@ def _run(engine: str, args: List[str]) -> str:
     if proc.returncode != 0:
         raise EngineError(f"bloomdex {' '.join(args)} failed "
                           f"(code {proc.returncode}): {proc.stderr.strip()}")
+    return proc.stderr.strip()
+
+
