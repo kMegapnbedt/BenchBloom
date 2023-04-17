@@ -76,3 +76,6 @@ def read_jsonl(path: Path, fields: List[str], id_field: str | None = None) -> It
 
 def read_text(path: Path) -> Iterator[Record]:
     """Stream a plain-text file: one record per non-empty line."""
+    with path.open("r", encoding="utf-8") as fh:
+        for i, line in enumerate(fh):
+            line = line.rstrip("\n")
