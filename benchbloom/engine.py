@@ -42,3 +42,7 @@ def _run(engine: str, args: List[str]) -> str:
     return proc.stderr.strip()
 
 
+def sign(engine: str, input_path: str, out_path: str, *, k: int = 128,
+         ngram: int = 5, min_token: int = 1, seed: int = 0) -> str:
+    """Build MinHash signatures for a normalized corpus."""
+    return _run(engine, ["sign", "--input", input_path, "--out", out_path,
