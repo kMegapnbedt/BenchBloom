@@ -190,3 +190,15 @@ Under the hood the botanist:
 The estimate is honest but approximate. The variance of a MinHash Jaccard
 estimate shrinks roughly with `1/√K`, so `--k 128` gives you a standard error
 near 0.09 and `--k 512` roughly halves it. When in doubt, confirm a flagged pair
+with the exact `scan`. The microscope finds candidates; the botanist confirms
+the diagnosis.
+
+### Reading a spore print by hand
+
+You can drive the microscope directly, without the botanist, if you already have
+normalized text (one record per line):
+
+```bash
+cpp/bloomdex sign  --input ref.norm.txt --out ref.sig --k 256 --ngram 5
+cpp/bloomdex sign  --input sub.norm.txt --out sub.sig --k 256 --ngram 5
+cpp/bloomdex match --ref ref.sig --subject sub.sig --out match.tsv --threshold 0.5
