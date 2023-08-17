@@ -202,3 +202,15 @@ normalized text (one record per line):
 cpp/bloomdex sign  --input ref.norm.txt --out ref.sig --k 256 --ngram 5
 cpp/bloomdex sign  --input sub.norm.txt --out sub.sig --k 256 --ngram 5
 cpp/bloomdex match --ref ref.sig --subject sub.sig --out match.tsv --threshold 0.5
+
+# find near-duplicates *within* a single corpus (deduplication)
+cpp/bloomdex self  --input sub.sig --out dups.tsv --threshold 0.8
+```
+
+A signature line is deliberately plain text so you can inspect it with any tool:
+
+```
+r42<TAB>318<TAB>8823...  199...  40..  (K space-separated 64-bit min-hashes)
+```
+
+---
