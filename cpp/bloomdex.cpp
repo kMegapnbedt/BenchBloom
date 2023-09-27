@@ -265,3 +265,15 @@ static int cmd_match(const Args& a) {
     std::string subject = a.get("subject");
     std::string out = a.get("out");
     if (ref.empty() || subject.empty() || out.empty()) {
+        std::cerr << "match: --ref, --subject and --out required\n";
+        return 2;
+    }
+    double threshold = a.getd("threshold", 0.5);
+    long long top = a.geti("top", 0);
+
+    int err = 0;
+    auto R = load_sigs(ref, err);
+    if (err) { std::cerr << "match: cannot read ref\n"; return 3; }
+    auto S = load_sigs(subject, err);
+    if (err) { std::cerr << "match: cannot read subject\n"; return 3; }
+
