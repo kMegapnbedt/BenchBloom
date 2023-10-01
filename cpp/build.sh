@@ -16,3 +16,4 @@ fi
 
 FLAGS="-std=c++17 -O2 -Wall -Wextra -pedantic"
 echo "building bloomdex with $CXX ($FLAGS)"
+"$CXX" $FLAGS "$SRC" -o "$OUT"
