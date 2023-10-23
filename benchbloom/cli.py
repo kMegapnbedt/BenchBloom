@@ -136,3 +136,9 @@ def build_parser() -> argparse.ArgumentParser:
     pn.add_argument("--id-field")
     pn.add_argument("--keep-punct", action="store_true")
     pn.set_defaults(func=_cmd_normalize)
+
+    ps = sub.add_parser("scan", help="exact Python n-gram/Jaccard leakage report")
+    ps.add_argument("--ref", required=True)
+    ps.add_argument("--subject", required=True)
+    ps.add_argument("--out")
+    ps.add_argument("--threshold", type=float, default=0.3)
