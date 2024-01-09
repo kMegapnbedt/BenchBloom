@@ -214,3 +214,15 @@ r42<TAB>318<TAB>8823...  199...  40..  (K space-separated 64-bit min-hashes)
 ```
 
 ---
+
+## How the spore print is actually taken
+
+For the curious, here is the honest mechanism, no hand-waving:
+
+- **Shingles.** Each normalized record is split into tokens; every window of
+  `ngram` consecutive tokens is joined with a unit-separator byte (`0x1f`) to
+  form one shingle. The separator prevents `["a","bc"]` and `["ab","c"]` from
+  colliding into the same string.
+- **Base hash.** Each shingle is hashed with 64-bit FNV-1a into a base value.
+- **Permutations.** `K` universal hash functions of the form
+  `(a·x + b) mod (2⁶¹−1)` permute that base value. The coefficients `a, b` come
