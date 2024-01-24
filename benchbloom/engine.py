@@ -49,3 +49,6 @@ def sign(engine: str, input_path: str, out_path: str, *, k: int = 128,
                          "--k", str(k), "--ngram", str(ngram),
                          "--min-token", str(min_token), "--seed", str(seed)])
 
+
+def match(engine: str, ref_sig: str, subject_sig: str, out_path: str,
+          *, threshold: float = 0.5) -> str:
