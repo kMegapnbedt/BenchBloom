@@ -250,3 +250,15 @@ python -m benchbloom normalize input.jsonl --out dried.txt --field text --field 
 
 ### `benchbloom scan`
 Exact n-gram / Jaccard / containment report, Python only. Flags on containment
+by default; pass `--jaccard-only` to trigger on Jaccard instead. `--top N` keeps
+only the N strongest pairs in the JSON body.
+
+### `benchbloom index`
+Full orchestration through the C++ engine. `--k` sets signature width, `--ngram`
+the shingle size, `--threshold` the estimated-Jaccard cutoff, `--engine` an
+explicit path to the binary, and `--workdir` a place to keep intermediates.
+
+### `benchbloom report`
+Render a saved `match.tsv` into a human summary with the strongest overlaps
+listed first.
+
