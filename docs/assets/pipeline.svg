@@ -36,3 +36,7 @@
         path="M70,150 C180,120 300,180 400,140 C500,110 600,150 640,140"/>
       <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="1.3s" repeatCount="indefinite"/>
     </circle>
+    <circle r="3.5" cx="0" cy="0" fill="#ffe9a8">
+      <animateMotion dur="4s" begin="2.6s" repeatCount="indefinite"
+        path="M70,150 C180,120 300,180 400,140 C500,110 600,150 640,140"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="2.6s" repeatCount="indefinite"/>
