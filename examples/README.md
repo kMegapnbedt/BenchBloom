@@ -27,3 +27,4 @@ make            # or: bash cpp/build.sh
 # 2) orchestrate normalize -> sign -> match through bloomdex
 python -m benchbloom index \
   --ref examples/benchmark.jsonl \
+  --subject examples/training.jsonl \
