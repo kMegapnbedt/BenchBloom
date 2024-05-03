@@ -64,3 +64,7 @@ def cross_leakage(ref_index: Dict[str, Set[str]],
     """Score every ref x subject pair; keep those at or above threshold.
 
     Uses containment as the trigger metric by default because contamination
+    often appears as a short benchmark item embedded in a longer training doc.
+    """
+    pairs: List[LeakPair] = []
+    for ref_id, ref_sh in ref_index.items():
