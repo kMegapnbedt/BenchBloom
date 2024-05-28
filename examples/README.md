@@ -28,3 +28,5 @@ make            # or: bash cpp/build.sh
 python -m benchbloom index \
   --ref examples/benchmark.jsonl \
   --subject examples/training.jsonl \
+  --field text --k 128 --ngram 4 --threshold 0.4 \
+  --out match.tsv
