@@ -262,3 +262,15 @@ explicit path to the binary, and `--workdir` a place to keep intermediates.
 Render a saved `match.tsv` into a human summary with the strongest overlaps
 listed first.
 
+### `bloomdex sign | match | self`
+The microscope's three lenses: build signatures, compare two signature sets, and
+find near-duplicates within one set. Run `bloomdex --help` for the exact flags.
+
+---
+
+## Interpreting results without fooling yourself
+
+A few honest cautions from the field log:
+
+- **Threshold is a dial, not a truth.** A high threshold misses paraphrased
+  leakage; a low one drowns you in coincidental n-gram overlap. Sweep it.
