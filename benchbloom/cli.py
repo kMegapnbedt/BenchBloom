@@ -148,3 +148,10 @@ def build_parser() -> argparse.ArgumentParser:
     ps.set_defaults(func=_cmd_scan)
 
     pi = sub.add_parser("index", help="orchestrate the C++ MinHash engine")
+    pi.add_argument("--ref", required=True)
+    pi.add_argument("--subject", required=True)
+    pi.add_argument("--out")
+    pi.add_argument("--engine", help="path to bloomdex binary")
+    pi.add_argument("--workdir")
+    pi.add_argument("--k", type=int, default=128)
+    pi.add_argument("--threshold", type=float, default=0.5)
