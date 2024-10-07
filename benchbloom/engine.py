@@ -52,3 +52,7 @@ def sign(engine: str, input_path: str, out_path: str, *, k: int = 128,
 
 def match(engine: str, ref_sig: str, subject_sig: str, out_path: str,
           *, threshold: float = 0.5) -> str:
+    """Score candidate overlap between reference and subject signatures."""
+    return _run(engine, ["match", "--ref", ref_sig, "--subject", subject_sig,
+                         "--out", out_path, "--threshold", str(threshold)])
+
