@@ -68,3 +68,7 @@ def cross_leakage(ref_index: Dict[str, Set[str]],
     """
     pairs: List[LeakPair] = []
     for ref_id, ref_sh in ref_index.items():
+        if not ref_sh:
+            continue
+        for sub_id, sub_sh in subject_index.items():
+            if not sub_sh:
