@@ -82,3 +82,7 @@ def read_text(path: Path) -> Iterator[Record]:
             if line.strip():
                 yield Record(rid=f"t{i}", text=line, meta={})
 
+
+def load(path: str | Path, *, fields: Iterable[str] | None = None,
+         id_field: str | None = None) -> List[Record]:
+    """Load a corpus from JSONL (.jsonl/.json) or text, auto-detected by suffix."""
