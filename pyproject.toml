@@ -22,3 +22,4 @@ classifiers = [
 dependencies = []
 
 [project.urls]
+Homepage = "https://example.invalid/benchbloom"
