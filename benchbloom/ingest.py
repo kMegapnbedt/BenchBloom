@@ -86,3 +86,6 @@ def read_text(path: Path) -> Iterator[Record]:
 def load(path: str | Path, *, fields: Iterable[str] | None = None,
          id_field: str | None = None) -> List[Record]:
     """Load a corpus from JSONL (.jsonl/.json) or text, auto-detected by suffix."""
+    p = Path(path)
+    if not p.exists():
+        raise FileNotFoundError(f"corpus not found: {p}")
