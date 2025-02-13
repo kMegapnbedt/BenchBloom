@@ -48,3 +48,7 @@
     <line x1="0" y1="30" x2="0" y2="70" stroke="url(#stem)" stroke-width="4"/>
     <g>
       <g fill="url(#petal)">
+        <ellipse cx="0" cy="-14" rx="7" ry="16"/>
+        <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(216)"/>
