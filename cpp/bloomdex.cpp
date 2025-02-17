@@ -290,3 +290,16 @@ static int cmd_match(const Args& a) {
             ++pairs;
             if (j >= threshold) {
                 ofs << r.id << '\t' << s.id << '\t' << j << '\n';
+                ++hits;
+            }
+            if (j > best) { best = j; best_id = s.id; }
+        }
+        if (top && !best_id.empty()) {
+            // top mode still emits the single best pair even if below threshold
+            (void)best_id;
+        }
+    }
+    std::cerr << "match: compared " << pairs << " pairs, " << hits
+              << " over threshold " << threshold << "\n";
+    return 0;
+}
