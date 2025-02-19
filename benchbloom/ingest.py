@@ -89,3 +89,7 @@ def load(path: str | Path, *, fields: Iterable[str] | None = None,
     p = Path(path)
     if not p.exists():
         raise FileNotFoundError(f"corpus not found: {p}")
+    field_list = list(fields) if fields else ["text"]
+    if p.suffix.lower() in {".jsonl", ".json", ".ndjson"}:
+        return list(read_jsonl(p, field_list, id_field))
+    return list(read_text(p))
