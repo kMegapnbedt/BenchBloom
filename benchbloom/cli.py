@@ -155,3 +155,9 @@ def build_parser() -> argparse.ArgumentParser:
     pi.add_argument("--workdir")
     pi.add_argument("--k", type=int, default=128)
     pi.add_argument("--threshold", type=float, default=0.5)
+    add_common(pi)
+    pi.set_defaults(func=_cmd_index)
+
+    pr = sub.add_parser("report", help="summarize a saved TSV match report")
+    pr.add_argument("input")
+    pr.add_argument("--top", type=int, default=10)
