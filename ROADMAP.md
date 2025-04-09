@@ -23,3 +23,5 @@ under "Planned" is aspirational and not yet built.
 - [ ] LSH banding to prune the O(N·M) match loop toward near-linear behavior.
 - [ ] Streaming signature format with a compact binary encoding.
 - [ ] Multi-field weighting and per-field contamination attribution.
+- [ ] HTML report export with highlighted overlapping shingles.
+- [ ] Parallel signing across shards / threads in the C++ engine.
