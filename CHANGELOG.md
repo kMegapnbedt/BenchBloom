@@ -16,3 +16,4 @@ to adhere to Semantic Versioning.
 - Direct `g++`/`clang++` build via `Makefile` and `cpp/build.sh` (no CMake).
 - Worked examples: reference/subject corpora and an end-to-end walkthrough.
 - CI workflow compiling the C++ engine and syntax-checking the Python package.
+
