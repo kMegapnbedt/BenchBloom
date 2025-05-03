@@ -303,3 +303,15 @@ static int cmd_match(const Args& a) {
               << " over threshold " << threshold << "\n";
     return 0;
 }
+
+static int cmd_self(const Args& a) {
+    std::string input = a.get("input");
+    std::string out = a.get("out");
+    if (input.empty() || out.empty()) {
+        std::cerr << "self: --input and --out required\n";
+        return 2;
+    }
+    double threshold = a.getd("threshold", 0.8);
+    int err = 0;
+    auto recs = load_sigs(input, err);
+    if (err) { std::cerr << "self: cannot read input\n"; return 3; }
