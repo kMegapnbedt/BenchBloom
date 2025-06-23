@@ -56,3 +56,6 @@ def match(engine: str, ref_sig: str, subject_sig: str, out_path: str,
     return _run(engine, ["match", "--ref", ref_sig, "--subject", subject_sig,
                          "--out", out_path, "--threshold", str(threshold)])
 
+
+@dataclass
+class MatchRow:
