@@ -12,3 +12,4 @@ cpp/bloomdex.exe
 # Run outputs
 *.sig
 match.tsv
+*.norm.txt
