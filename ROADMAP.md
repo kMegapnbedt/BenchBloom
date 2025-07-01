@@ -25,3 +25,5 @@ under "Planned" is aspirational and not yet built.
 - [ ] Multi-field weighting and per-field contamination attribution.
 - [ ] HTML report export with highlighted overlapping shingles.
 - [ ] Parallel signing across shards / threads in the C++ engine.
+
+Honesty note: performance claims for the C++ engine are qualitative
