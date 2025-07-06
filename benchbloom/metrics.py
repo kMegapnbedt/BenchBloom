@@ -72,3 +72,7 @@ def cross_leakage(ref_index: Dict[str, Set[str]],
             continue
         for sub_id, sub_sh in subject_index.items():
             if not sub_sh:
+                continue
+            jc = jaccard(ref_sh, sub_sh)
+            ct = containment(ref_sh, sub_sh)
+            trigger = ct if use_containment else jc
