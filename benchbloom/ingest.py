@@ -93,3 +93,6 @@ def load(path: str | Path, *, fields: Iterable[str] | None = None,
     if p.suffix.lower() in {".jsonl", ".json", ".ndjson"}:
         return list(read_jsonl(p, field_list, id_field))
     return list(read_text(p))
+
+
+def write_normalized(records: Iterable[Record], out_path: str | Path,
