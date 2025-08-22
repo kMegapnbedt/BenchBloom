@@ -59,3 +59,7 @@ def match(engine: str, ref_sig: str, subject_sig: str, out_path: str,
 
 @dataclass
 class MatchRow:
+    ref_id: str
+    subject_id: str
+    jaccard: float
+
