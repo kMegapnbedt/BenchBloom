@@ -96,3 +96,6 @@ def load(path: str | Path, *, fields: Iterable[str] | None = None,
 
 
 def write_normalized(records: Iterable[Record], out_path: str | Path,
+                     *, strip_punct: bool = True) -> int:
+    """Write one normalized record per line; returns the count written.
+
