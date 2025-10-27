@@ -17,3 +17,4 @@ to adhere to Semantic Versioning.
 - Worked examples: reference/subject corpora and an end-to-end walkthrough.
 - CI workflow compiling the C++ engine and syntax-checking the Python package.
 
+### Notes
