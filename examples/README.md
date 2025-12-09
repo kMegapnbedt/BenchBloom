@@ -30,3 +30,4 @@ python -m benchbloom index \
   --subject examples/training.jsonl \
   --field text --k 128 --ngram 4 --threshold 0.4 \
   --out match.tsv
+
