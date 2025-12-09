@@ -25,3 +25,4 @@ dependencies = []
 Homepage = "https://example.invalid/benchbloom"
 Changelog = "https://example.invalid/benchbloom/blob/main/CHANGELOG.md"
 
+[project.scripts]
