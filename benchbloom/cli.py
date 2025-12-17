@@ -161,3 +161,9 @@ def build_parser() -> argparse.ArgumentParser:
     pr = sub.add_parser("report", help="summarize a saved TSV match report")
     pr.add_argument("input")
     pr.add_argument("--top", type=int, default=10)
+    pr.set_defaults(func=_cmd_report)
+
+    return p
+
+
+def main(argv=None) -> int:
