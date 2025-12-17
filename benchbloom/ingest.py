@@ -99,3 +99,7 @@ def write_normalized(records: Iterable[Record], out_path: str | Path,
                      *, strip_punct: bool = True) -> int:
     """Write one normalized record per line; returns the count written.
 
+    This is the hand-off format consumed by the C++ `bloomdex sign` command.
+    """
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
