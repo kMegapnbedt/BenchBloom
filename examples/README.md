@@ -31,3 +31,4 @@ python -m benchbloom index \
   --field text --k 128 --ngram 4 --threshold 0.4 \
   --out match.tsv
 
+# 3) render the report
