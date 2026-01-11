@@ -84,3 +84,7 @@ def cross_leakage(ref_index: Dict[str, Set[str]],
 
 def summarize(pairs: List[LeakPair], ref_count: int) -> Dict[str, float]:
     """Aggregate a report: contaminated ref items, rates, and peak overlap."""
+    contaminated = {p.ref_id for p in pairs}
+    peak = max((max(p.jaccard, p.containment) for p in pairs), default=0.0)
+    return {
+        "ref_items": ref_count,
