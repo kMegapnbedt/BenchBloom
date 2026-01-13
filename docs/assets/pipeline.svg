@@ -52,3 +52,7 @@
         <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(72)"/>
         <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(144)"/>
         <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(288)"/>
+      </g>
+      <circle r="6" fill="#7a3f22"/>
+      <animateTransform attributeName="transform" type="scale"
