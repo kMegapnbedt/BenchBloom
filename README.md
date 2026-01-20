@@ -274,3 +274,15 @@ A few honest cautions from the field log:
 
 - **Threshold is a dial, not a truth.** A high threshold misses paraphrased
   leakage; a low one drowns you in coincidental n-gram overlap. Sweep it.
+- **Containment finds the small-in-large case.** If your benchmark items are
+  short and your training docs are long, prefer the default containment trigger.
+- **MinHash is a screen, not a verdict.** Treat every flagged pair as a
+  candidate and confirm the important ones with the exact `scan`.
+- **Normalization changes the answer.** Stripping punctuation merges more items;
+  keeping it (`--keep-punct`) is stricter. Pick one and stay consistent across a
+  study.
+- **This tool detects textual overlap.** Semantic contamination — the same
+  question rephrased entirely — is out of scope here and always will be for an
+  n-gram instrument. Do not claim more than the spore print shows.
+
+---
