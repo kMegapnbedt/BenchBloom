@@ -46,3 +46,5 @@
       <animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
     </circle>
   </g>
+
+  <text x="150" y="300" fill="#8fd6a0" font-family="monospace" font-size="12">reference</text>
