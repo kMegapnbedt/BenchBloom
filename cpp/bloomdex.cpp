@@ -328,3 +328,16 @@ static int cmd_self(const Args& a) {
             }
         }
     }
+    std::cerr << "self: " << hits << " near-duplicate pairs at threshold " << threshold << "\n";
+    return 0;
+}
+
+static void usage() {
+    std::cerr <<
+        "bloomdex — benchbloom C++17 shingle/MinHash engine\n"
+        "usage:\n"
+        "  bloomdex sign  --input F --out F [--k 128] [--ngram 5] [--min-token 1] [--seed N]\n"
+        "  bloomdex match --ref F --subject F --out F [--threshold 0.5] [--top 0]\n"
+        "  bloomdex self  --input F --out F [--threshold 0.8]\n";
+}
+
