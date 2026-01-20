@@ -63,3 +63,6 @@ class MatchRow:
     subject_id: str
     jaccard: float
 
+
+def parse_match_report(path: str | Path) -> List[MatchRow]:
+    """Parse the TSV report produced by `bloomdex match`."""
