@@ -286,3 +286,15 @@ A few honest cautions from the field log:
   n-gram instrument. Do not claim more than the spore print shows.
 
 ---
+
+## What is honestly finished, and what is not
+
+This release is a **foundation**, and the [ROADMAP](ROADMAP.md) says so plainly.
+Four foundation milestones are implemented and verified: ingestion &
+normalization, exact leakage metrics, the C++17 MinHash engine, and the
+Python↔C++ orchestration. Everything past that — LSH banding, binary signature
+formats, multi-field attribution, HTML reports, threaded signing — is planned,
+not built. There is no benchmark suite, so no throughput number is claimed as
+fact; "high-throughput" describes the streaming design, not a measured figure.
+
+There are, deliberately, **no unit tests** in this release. The CI instead
