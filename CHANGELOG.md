@@ -18,3 +18,4 @@ to adhere to Semantic Versioning.
 - CI workflow compiling the C++ engine and syntax-checking the Python package.
 
 ### Notes
+- MinHash overlap is an estimate; use `scan` for exact verification on small
