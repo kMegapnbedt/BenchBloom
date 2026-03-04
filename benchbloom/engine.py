@@ -66,3 +66,7 @@ class MatchRow:
 
 def parse_match_report(path: str | Path) -> List[MatchRow]:
     """Parse the TSV report produced by `bloomdex match`."""
+    rows: List[MatchRow] = []
+    p = Path(path)
+    with p.open("r", encoding="utf-8") as fh:
+        header = fh.readline()  # ref_id\tsubject_id\tjaccard
