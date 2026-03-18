@@ -70,3 +70,6 @@ def parse_match_report(path: str | Path) -> List[MatchRow]:
     p = Path(path)
     with p.open("r", encoding="utf-8") as fh:
         header = fh.readline()  # ref_id\tsubject_id\tjaccard
+        if not header:
+            return rows
+        for line in fh:
