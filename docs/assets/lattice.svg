@@ -48,3 +48,5 @@
   </g>
 
   <text x="150" y="300" fill="#8fd6a0" font-family="monospace" font-size="12">reference</text>
+  <text x="320" y="300" fill="#f6a5c0" font-family="monospace" font-size="12">subject</text>
+</svg>
