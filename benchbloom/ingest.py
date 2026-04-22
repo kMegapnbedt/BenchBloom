@@ -103,3 +103,6 @@ def write_normalized(records: Iterable[Record], out_path: str | Path,
     """
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
+    n = 0
+    with out.open("w", encoding="utf-8") as fh:
+        for rec in records:
