@@ -34,3 +34,4 @@ python -m benchbloom index \
 # 3) render the report
 python -m benchbloom report match.tsv
 ```
+
