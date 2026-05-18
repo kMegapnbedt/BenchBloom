@@ -19,3 +19,4 @@ to adhere to Semantic Versioning.
 
 ### Notes
 - MinHash overlap is an estimate; use `scan` for exact verification on small
+  corpora. Estimator variance narrows as `--k` increases.
