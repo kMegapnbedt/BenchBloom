@@ -106,3 +106,7 @@ def write_normalized(records: Iterable[Record], out_path: str | Path,
     n = 0
     with out.open("w", encoding="utf-8") as fh:
         for rec in records:
+            norm = normalize(rec.text, strip_punct=strip_punct)
+            fh.write(norm + "\n")
+            n += 1
+    return n
