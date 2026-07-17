@@ -56,3 +56,7 @@
       </g>
       <circle r="6" fill="#7a3f22"/>
       <animateTransform attributeName="transform" type="scale"
+        values="0.2;1;0.92;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+</svg>
