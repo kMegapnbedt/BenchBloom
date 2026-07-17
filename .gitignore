@@ -13,3 +13,4 @@ cpp/bloomdex.exe
 *.sig
 match.tsv
 *.norm.txt
+benchbloom_*/
