@@ -298,3 +298,16 @@ not built. There is no benchmark suite, so no throughput number is claimed as
 fact; "high-throughput" describes the streaming design, not a measured figure.
 
 There are, deliberately, **no unit tests** in this release. The CI instead
+compiles the C++ engine, syntax-checks every Python module, and runs the example
+assay end to end as a smoke test. Tests are welcome future work.
+
+---
+
+## License
+
+Released under the [MIT License](LICENSE). Press what you like, share the
+prints freely.
+
+<div align="center">
+<em>Grown on a quiet bench, one spore print at a time.</em> 🌱
+</div>
