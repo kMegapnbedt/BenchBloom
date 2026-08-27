@@ -12,3 +12,4 @@ $(BIN): $(SRC)
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(BIN)
 
 clean:
+	rm -f $(BIN) $(BIN).exe
