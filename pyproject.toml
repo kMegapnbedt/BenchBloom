@@ -28,3 +28,5 @@ Changelog = "https://example.invalid/benchbloom/blob/main/CHANGELOG.md"
 [project.scripts]
 benchbloom = "benchbloom.cli:main"
 
+[tool.setuptools]
+packages = ["benchbloom"]
