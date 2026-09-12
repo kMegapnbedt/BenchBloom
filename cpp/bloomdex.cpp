@@ -341,3 +341,16 @@ static void usage() {
         "  bloomdex self  --input F --out F [--threshold 0.8]\n";
 }
 
+} // namespace bb
+
+int main(int argc, char** argv) {
+    if (argc < 2) { bb::usage(); return 2; }
+    std::string cmd = argv[1];
+    bb::Args a = bb::parse_args(argc, argv, 2);
+    if (cmd == "sign")  return bb::cmd_sign(a);
+    if (cmd == "match") return bb::cmd_match(a);
+    if (cmd == "self")  return bb::cmd_self(a);
+    if (cmd == "-h" || cmd == "--help" || cmd == "help") { bb::usage(); return 0; }
+    bb::usage();
+    return 2;
+}
