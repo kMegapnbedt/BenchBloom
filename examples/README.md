@@ -35,3 +35,5 @@ python -m benchbloom index \
 python -m benchbloom report match.tsv
 ```
 
+The estimated Jaccard from MinHash will track (not exactly equal) the exact
+scan; raise `--k` to tighten the estimate.
