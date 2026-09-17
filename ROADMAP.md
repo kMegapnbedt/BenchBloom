@@ -27,3 +27,5 @@ under "Planned" is aspirational and not yet built.
 - [ ] Parallel signing across shards / threads in the C++ engine.
 
 Honesty note: performance claims for the C++ engine are qualitative
+("high-throughput streaming") — no formal benchmark suite ships yet, and none
+is claimed here.
