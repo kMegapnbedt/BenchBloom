@@ -88,3 +88,8 @@ def summarize(pairs: List[LeakPair], ref_count: int) -> Dict[str, float]:
     peak = max((max(p.jaccard, p.containment) for p in pairs), default=0.0)
     return {
         "ref_items": ref_count,
+        "flagged_pairs": len(pairs),
+        "contaminated_ref_items": len(contaminated),
+        "contamination_rate": round(len(contaminated) / ref_count, 4) if ref_count else 0.0,
+        "peak_overlap": round(peak, 4),
+    }
