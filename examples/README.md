@@ -15,6 +15,9 @@ python -m benchbloom scan \
   --field text --ngram 4 --threshold 0.3
 ```
 
+Or run the whole loop at once with `make check` (builds the engine, byte-
+compiles the package and re-runs the sample scan).
+
 You should see `b1`, `b2`, and `b4` flagged with high containment, and a
 `verdict:` line printed to stderr.
 
