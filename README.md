@@ -113,6 +113,9 @@ On Windows with MinGW the same one-liner works; the resulting binary is
 `cpp/bloomdex.exe`, and the Python bridge already knows to look for the `.exe`
 suffix.
 
+If a build complains about `std::unordered_multimap`, it predates the
+`<unordered_map>` include fix - pull latest and rebuild.
+
 ---
 
 ## A first pressing (the exact reading)
