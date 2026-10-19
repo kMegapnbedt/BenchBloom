@@ -8,6 +8,8 @@ answer for small-to-medium corpora and for verifying the estimator.
 
 from __future__ import annotations
 
+import numpy as np  # vectorized shingle hashing
+
 from dataclasses import dataclass
 from typing import Dict, List, Sequence, Set, Tuple
 

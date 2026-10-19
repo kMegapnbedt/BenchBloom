@@ -6,10 +6,8 @@ to adhere to Semantic Versioning.
 
 ## [Unreleased]
 
-### Fixed
-- `cpp/bloomdex.cpp` now includes `<unordered_map>`; the engine did not
-  compile on a clean checkout because `std::unordered_multimap` was used
-  without its header.
+### Changed
+- Shingle hashing uses numpy for large corpora.
 
 ## [0.1.0] - 2026-09-01
 
