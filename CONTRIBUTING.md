@@ -9,3 +9,4 @@ Thanks for looking. A few things that make a change easy to take:
 - `python -m benchbloom scan --ref examples/benchmark.jsonl --subject examples/training.jsonl`
 4. Add a test for the behaviour you changed.
 5. Match the surrounding style; the codebase is deliberately small and flat.
+6. Dev tooling is pinned in `requirements-dev.txt`; bump pins deliberately.

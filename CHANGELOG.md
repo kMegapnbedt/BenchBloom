@@ -6,6 +6,9 @@ to adhere to Semantic Versioning.
 
 ## [Unreleased]
 
+### Changed
+- Pinned the lint toolchain in `requirements-dev.txt`; dependabot now watches it.
+
 ### Fixed
 - `cpp/bloomdex.cpp` now includes `<unordered_map>`; the engine did not
   compile on a clean checkout because `std::unordered_multimap` was used
