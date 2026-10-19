@@ -71,8 +71,10 @@ def _cmd_index(args: argparse.Namespace) -> int:
 
     ref_sig = workdir / "ref.sig"
     sub_sig = workdir / "subject.sig"
-    print(engine.sign(eng, str(ref_norm), str(ref_sig), k=args.k, ngram=args.ngram))
-    print(engine.sign(eng, str(sub_norm), str(sub_sig), k=args.k, ngram=args.ngram))
+    print(engine.sign(eng, str(ref_norm), str(ref_sig), k=args.k, ngram=args.ngram,
+                      min_token=args.min_token, seed=args.seed))
+    print(engine.sign(eng, str(sub_norm), str(sub_sig), k=args.k, ngram=args.ngram,
+                      min_token=args.min_token, seed=args.seed))
 
     match_out = Path(args.out) if args.out else workdir / "match.tsv"
     print(engine.match(eng, str(ref_sig), str(sub_sig), str(match_out),
@@ -154,6 +156,10 @@ def build_parser() -> argparse.ArgumentParser:
     pi.add_argument("--engine", help="path to bloomdex binary")
     pi.add_argument("--workdir")
     pi.add_argument("--k", type=int, default=128)
+    pi.add_argument("--seed", type=int, default=0,
+                    help="hash seed for the MinHash permutations")
+    pi.add_argument("--min-token", dest="min_token", type=int, default=1,
+                    help="drop shingles shorter than this many tokens")
     pi.add_argument("--threshold", type=float, default=0.5)
     add_common(pi)
     pi.set_defaults(func=_cmd_index)
