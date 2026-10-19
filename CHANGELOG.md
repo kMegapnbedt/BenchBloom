@@ -8,6 +8,8 @@ to adhere to Semantic Versioning.
 
 ### Changed
 - Pinned the lint toolchain in `requirements-dev.txt`; dependabot now watches it.
+- Recorded the dev-tooling pin and the dependency update path in the
+  contributing guide.
 
 ### Fixed
 - `cpp/bloomdex.cpp` now includes `<unordered_map>`; the engine did not
